@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ambient Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #0f0f13;
+            font-family: 'Inter', sans-serif;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        canvas {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #controls {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            background: rgba(15, 15, 19, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 15px 25px;
+            border-radius: 20px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            max-width: 90%;
+            overflow-x: auto;
+        }
+
+        .sliders {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding: 5px;
+        }
+
+        button {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        select {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #fff;
+            padding: 10px;
+            border-radius: 12px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        select option {
+            background: #0f0f13;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div id="controls">
+        <button onclick="startAudio()">Start</button>
+        <select id="effectSelect">
+            <option value="nebula">Nebula</option>
+            <option value="cosmicRings">Cosmic Rings</option>
+            <option value="ambient">Ambient Flow</option>
+            <option value="waves">Smooth Waves</option>
+            <option value="frequencyBased">Frequency Based</option>
+            <option value="waterfall">Frequency Waterfall</option>
+        </select>
+        <div class="sliders">
+            <div class="slider-group">
+                <label for="bassSlider">Bass</label>
+                <input type="range" id="bassSlider" min="0" max="200" value="100">
+            </div>
+            <div class="slider-group">
+                <label for="midSlider">Mid</label>
+                <input type="range" id="midSlider" min="0" max="200" value="100">
+            </div>
+            <div class="slider-group">
+                <label for="highSlider">High</label>
+                <input type="range" id="highSlider" min="0" max="200" value="100">
+            </div>
+            <div class="slider-group">
+                <label for="sensitivitySlider">Sensitivity</label>
+                <input type="range" id="sensitivitySlider" min="50" max="300" value="150">
+            </div>
+        </div>
+    </div>
+    <script src="visualizer.js"></script>
+    <script>
+        document.getElementById('startButton').addEventListener('click', () => {
+            startAudio();
+        });
+    </script>
+</body>
+</html> 

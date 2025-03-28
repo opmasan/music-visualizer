@@ -1,0 +1,153 @@
+.song-info-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(15, 15, 19, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 12px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.song-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.song-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.song-artist {
+    font-size: 14px;
+    opacity: 0.8;
+    margin: 0;
+}
+
+.song-album {
+    font-size: 12px;
+    opacity: 0.6;
+    margin: 0;
+}
+
+.recognize-btn {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(103, 65, 217, 0.8);
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.recognize-btn:hover {
+    background: rgba(103, 65, 217, 1);
+    transform: scale(1.1);
+}
+
+.recognize-btn:active {
+    transform: scale(0.95);
+}
+
+.recognize-btn.recording {
+    background: rgba(217, 65, 65, 0.8);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.streaming-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.streaming-link {
+    height: 24px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.streaming-link:hover {
+    opacity: 1;
+}
+
+.streaming-link img {
+    height: 100%;
+    width: auto;
+}
+
+.message {
+    text-align: center;
+    padding: 10px;
+}
+
+.message.error {
+    color: #ff6b6b;
+}
+
+.message.info {
+    color: #4dabf7;
+}
+
+.sliders {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.slider-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.slider-group label {
+    color: white;
+    font-size: 12px;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+    background: rgba(255, 255, 255, 0.9);
+} 

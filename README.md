@@ -1,4 +1,4 @@
-# Music Wave Visualizer
+# Music Visualizer
 
 Інтерактивний аудіо візуалізатор, який реагує на музику через мікрофон.
 
@@ -22,7 +22,3 @@
 - Web Audio API
 - HTML5 Canvas
 - JavaScript
-
-## Ліцензія
-
-MIT 

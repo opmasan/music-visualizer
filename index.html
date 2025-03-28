@@ -82,13 +82,13 @@
 <body>
     <canvas id="canvas"></canvas>
     <div id="controls">
-        <button onclick="startAudio()">Start</button>
+        <button id="startButton">Start</button>
         <select id="effectSelect">
-            <option value="nebula">Nebula</option>
             <option value="cosmicRings">Cosmic Rings</option>
+            <option value="frequencyBased">Frequency Based</option>
+            <option value="nebula">Nebula</option>
             <option value="ambient">Ambient Flow</option>
             <option value="waves">Smooth Waves</option>
-            <option value="frequencyBased">Frequency Based</option>
             <option value="waterfall">Frequency Waterfall</option>
         </select>
         <div class="sliders">
@@ -111,10 +111,5 @@
         </div>
     </div>
     <script src="visualizer.js"></script>
-    <script>
-        document.getElementById('startButton').addEventListener('click', () => {
-            startAudio();
-        });
-    </script>
 </body>
 </html> 
